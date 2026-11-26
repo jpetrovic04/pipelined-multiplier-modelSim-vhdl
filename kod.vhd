@@ -51,8 +51,7 @@ elsif (clk'event and clk = '1') then
   end loop;
 end if;
 end process; 
---generisanje sel 
---parcijalni proizvodi c
+
 lo: for i in 0 to N-1 generate
   l1: if(i = (N-1)) generate
     sel(i) <= '1';
@@ -66,7 +65,6 @@ lo: for i in 0 to N-1 generate
   c(i)(N) <= c(i)(N-1); 
 end generate;
 
---povezivanje sabiraca
 l4: for i in 0 to N-1 generate
   l5: if (i=0) generate
       sum(0) <= c(0)(N downto 0);
@@ -92,12 +90,12 @@ begin
     sig <= (others => (others => '0'));
     zp_reg <= (others => (others => '0'));
   elsif (clk'event and clk='1') then
-    --upis medjuzbirova u blokove REG na ras ivicu takta
+    
     sig(0) <= co(0) & sum(0)(N downto 1);
     for i in 1 to N-1 loop
       sig(i) <= sum(i)(N) & sum(i)(N downto 1);
     end loop;
-    --delay za zp
+    
     for i in 0 to N-1 loop
       zp_reg(i)(0) <= zp(i);
       for d in 1 to N-i-1 loop
