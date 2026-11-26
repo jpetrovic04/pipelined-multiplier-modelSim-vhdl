@@ -1,4 +1,4 @@
-# N×N Signed Pipelined Multiplier (VHDL)
+# Signed Pipelined Multiplier (VHDL)
 
 A parameterized, fully pipelined $N \times N$-bit signed array multiplier implemented in VHDL. The design performs two's complement multiplication using a ripple-carry adder tree, sign-extension logic, and multi-stage pipeline registers to achieve high clock frequency and a throughput of one multiplication per clock cycle.
 
