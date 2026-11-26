@@ -45,7 +45,3 @@ The design was verified in **Intel ModelSim** with `N = 8` using corner-case sig
 3. Add top-level signals (`clk`, `rst`, `a`, `b`, `z`) to the Wave window and set the radix to **Signed / Decimal**.
 4. Run the simulation for `600 ns`.
 
-### Simulation Waveform
-![Simulation Waveform](images/waveform.png)
-
-*(Note: Intermediate transient values visible for 1 clock cycle between consecutive results occur as new operands propagate through the pipeline stages before all output bits align.)*
